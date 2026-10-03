@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mental Health Predictor</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <div class="header-icon">
+            🧠
+        </div>
+
+        <h1>Mental Health Predictor</h1>
+
+        <p>
+            Enter your lifestyle and academic information to predict
+            your mental health score.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <form id="predictionForm">
+
+            <!-- Personal Information -->
+
+            <div class="section-title">
+                <span>👤</span>
+                Personal Information
+            </div>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="age">
+                        Age <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="number"
+                        id="age"
+                        min="10"
+                        max="100"
+                        placeholder="Enter your age"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="gender">
+                        Gender <span class="required">*</span>
+                    </label>
+
+                    <select id="gender" required>
+                        <option value="">Select gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="country">
+                        Country <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="country"
+                        placeholder="e.g. India"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="academic_level">
+                        Academic Level <span class="required">*</span>
+                    </label>
+
+                    <select id="academic_level" required>
+                        <option value="">Select academic level</option>
+                        <option value="Undergraduate">Undergraduate</option>
+                        <option value="Graduate">Graduate</option>
+                        <option value="High School">High School</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <!-- Social Media -->
+
+            <div class="section-title" style="margin-top: 35px;">
+                <span>📱</span>
+                Social Media Usage
+            </div>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="most_used_platform">
+                        Most Used Platform <span class="required">*</span>
+                    </label>
+
+                    <select id="most_used_platform" required>
+                        <option value="">Select platform</option>
+                        <option value="Facebook">Facebook</option>
+                        <option value="LinkedIn">LinkedIn</option>
+                        <option value="Instagram">Instagram</option>
+                        <option value="Snapchat">Snapchat</option>
+                        <option value="Twitter">Twitter</option>
+                        <option value="YouTube">YouTube</option>
+                        <option value="TikTok">TikTok</option>
+                        <option value="LINE">LINE</option>
+                        <option value="KakaoTalk">KakaoTalk</option>
+                        <option value="VKontakte">VKontakte</option>
+                        <option value="WhatsApp">WhatsApp</option>
+                        <option value="WeChat">WeChat</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="purpose_of_use">
+                        Purpose of Use <span class="required">*</span>
+                    </label>
+
+                    <select id="purpose_of_use" required>
+                        <option value="">Select purpose</option>
+                        <option value="Networking">Networking</option>
+                        <option value="Education">Education</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="News">News</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="avg_daily_usage_hours">
+                        Average Daily Usage Hours <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="number"
+                        id="avg_daily_usage_hours"
+                        min="6"
+                        max="24"
+                        step="0.1"
+                        placeholder="6 - 24 hours"
+                        required
+                    >
+
+                    <div class="hint">
+                        Allowed range: 6–24 hours
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="daily_unlocks">
+                        Daily Unlocks <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="number"
+                        id="daily_unlocks"
+                        min="0"
+                        placeholder="e.g. 50"
+                        required
+                    >
+                </div>
+
+            </div>
+
+
+            <!-- Lifestyle -->
+
+            <div class="section-title" style="margin-top: 35px;">
+                <span>🌱</span>
+                Lifestyle & Wellbeing
+            </div>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="study_hours">
+                        Study Hours <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="number"
+                        id="study_hours"
+                        min="0"
+                        max="24"
+                        step="0.1"
+                        placeholder="0 - 24 hours"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="physical_activity_hours">
+                        Physical Activity Hours <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="number"
+                        id="physical_activity_hours"
+                        min="0"
+                        max="24"
+                        step="0.1"
+                        placeholder="0 - 24 hours"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="sleep_hours_per_night">
+                        Sleep Hours Per Night <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="number"
+                        id="sleep_hours_per_night"
+                        min="0"
+                        max="24"
+                        step="0.1"
+                        placeholder="0 - 24 hours"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="stress_level">
+                        Stress Level <span class="required">*</span>
+                    </label>
+
+                    <select id="stress_level" required>
+                        <option value="">Select stress level</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                        <option value="Very High">Very High</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="button-container">
+
+                <button
+                    type="submit"
+                    class="predict-btn"
+                    id="predictButton"
+                >
+                    Predict Mental Health Score
+                </button>
+
+            </div>
+
+        </form>
+
+
+        <!-- Loading -->
+
+        <div class="loading" id="loading">
+
+            <div class="spinner"></div>
+
+            <span>
+                Analyzing your information...
+            </span>
+
+        </div>
+
+
+        <!-- Error -->
+
+        <div class="error-box" id="errorBox"></div>
+
+
+        <!-- Result -->
+
+        <div class="result-card" id="resultCard">
+
+            <div class="result-icon">
+                ✓
+            </div>
+
+            <h2>
+                Your Predicted Mental Health Score
+            </h2>
+
+            <div class="score" id="score">
+                --
+            </div>
+
+            <p>
+                This score was generated by the trained
+                machine learning model.
+            </p>
+
+            <button
+                type="button"
+                class="reset-btn"
+                id="resetButton"
+            >
+                Try Again
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        Mental Health Prediction System • Powered by Machine Learning
+    </div>
+
+</div>
+
+
+<script>
+
+const API_URL = "http://127.0.0.1:2200/predict";
+
+const form = document.getElementById("predictionForm");
+const loading = document.getElementById("loading");
+const errorBox = document.getElementById("errorBox");
+const resultCard = document.getElementById("resultCard");
+const scoreElement = document.getElementById("score");
+const predictButton = document.getElementById("predictButton");
+const resetButton = document.getElementById("resetButton");
+
+
+function showError(message) {
+
+    errorBox.textContent = message;
+    errorBox.style.display = "block";
+
+}
+
+
+function hideError() {
+
+    errorBox.style.display = "none";
+    errorBox.textContent = "";
+
+}
+
+
+function numberValue(id) {
+
+    return Number(document.getElementById(id).value);
+
+}
+
+
+form.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    hideError();
+
+    resultCard.classList.remove("show");
+
+
+    const data = {
+
+        age: numberValue("age"),
+
+        gender:
+            document.getElementById("gender").value,
+
+        country:
+            document.getElementById("country").value.trim(),
+
+        academic_level:
+            document.getElementById("academic_level").value,
+
+        most_used_platform:
+            document.getElementById("most_used_platform").value,
+
+        purpose_of_use:
+            document.getElementById("purpose_of_use").value,
+
+        avg_daily_usage_hours:
+            numberValue("avg_daily_usage_hours"),
+
+        daily_unlocks:
+            numberValue("daily_unlocks"),
+
+        study_hours:
+            numberValue("study_hours"),
+
+        physical_activity_hours:
+            numberValue("physical_activity_hours"),
+
+        sleep_hours_per_night:
+            numberValue("sleep_hours_per_night"),
+
+        stress_level:
+            document.getElementById("stress_level").value
+    };
+
+
+    loading.style.display = "flex";
+
+    predictButton.disabled = true;
+    predictButton.textContent = "Predicting...";
+
+
+    try {
+
+        const response = await fetch(API_URL, {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify(data)
+
+        });
+
+
+        const result = await response.json();
+
+
+        if (!response.ok) {
+
+            let message = "Something went wrong.";
+
+            if (Array.isArray(result.detail)) {
+
+                message = result.detail
+                    .map(error => error.msg || "Invalid input")
+                    .join(" ");
+
+            }
+            else if (result.detail) {
+
+                message = result.detail;
+
+            }
+
+            throw new Error(message);
+        }
+
+
+        scoreElement.textContent =
+            result.predicted_mental_health_score;
+
+        resultCard.classList.add("show");
+
+
+        resultCard.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    }
+
+
+    catch (error) {
+
+        console.error(error);
+
+        if (error instanceof TypeError) {
+
+            showError(
+                "Unable to connect to the FastAPI server. " +
+                "Please make sure Uvicorn is running on " +
+                "http://127.0.0.1:2200."
+            );
+
+        }
+        else {
+
+            showError(error.message);
+
+        }
+
+    }
+
+
+    finally {
+
+        loading.style.display = "none";
+
+        predictButton.disabled = false;
+
+        predictButton.textContent =
+            "Predict Mental Health Score";
+
+    }
+
+});
+
+
+resetButton.addEventListener("click", function() {
+
+    form.reset();
+
+    resultCard.classList.remove("show");
+
+    hideError();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+</script>
+
+</body>
+</html>
